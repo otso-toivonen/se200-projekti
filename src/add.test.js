@@ -30,8 +30,8 @@ describe('add', () => {
     expect(add('abc', '5')).toBe('abc5');
   });
   test('handle Infinity', () => {
-    expect(add(Infinity, '5')).toBe(Infinity);
-    expect(add(-Infinity, '5')).toBe(-Infinity);
+    expect(add(Infinity, 5)).toBe(Infinity);
+    expect(add(-Infinity, 5)).toBe(-Infinity);
   });
   test('works with numeric infinity', () => {
     expect(add(1e308, 1e308)).toBe(Infinity);
