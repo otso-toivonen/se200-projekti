@@ -19,6 +19,19 @@ jobs:
       with:
         node-version: 24.x
         cache: 'npm'
-    - run: npm ci
-    - run: npm run build --if-present
-    - run: npm test
+    - name: Install dependencies    
+      run: npm ci
+      
+    - name: Build  
+      run: npm run build --if-present
+
+    - name: Run tests  
+      run: npm test
+
+    - name: Generate Lcov coverage report  
+      run: npm run coverage:lcov
+
+    - name: Coveralls
+      uses: coverallsapp/github-action@v2
+      with: 
+        github-token: ${{ secrets.GITHUB_TOKEN }}
