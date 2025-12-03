@@ -6,7 +6,8 @@
   "type": "module",
   "scripts": {
     "test": "c8 node --experimental-vm-modules node_modules/jest/bin/jest.js src",
-    "coverage:lcov": "c8 report --reporter=lcov"
+    "coverage:lcov": "c8 report --reporter=lcov",
+    "coverage:html": "c8 report --reporter=html"
   },
   "repository": {
     "type": "git",
